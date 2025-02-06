@@ -1,0 +1,599 @@
+<?php 
+if(isset($_POST['submit'])){
+    $to = "coder.biharicoders@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['name'];
+    
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+	echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--===Title=====-->
+    <title>Bikki Singh | Full Stack Developer | Public Speaker</title>
+    <!--===Title=====-->
+
+    <!--====Meta tags====-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="description" content="A full stack developer, public speaker at khabai tech, lives in Hajipur, Bihar.We, the khabai tech team are on a mission to transform Bihar as an IT Hub.">
+    
+    <meta name="keywords" content="Khabai Tech, full stack developer at khabai tech, programmer_bikki, programmerbikki, Bikki Singh,developer in hajipur, developer in bihar,full stack developer in hajipur,full stack developer in bihar,Web development in bihar, Digital Bihar, Digital invitation, Digital visiting card, Web Development in Hajipur, Bihar, Transforming Lives Digitally,">
+    
+    <meta property="og:type" content="website" /><!--for telling about website-->
+    <meta property="og:title" content="Bikki Singh | Full Stack Developer | Public Speaker"/>
+    <meta property="og:description" content="A full stack developer, public speaker at khabai tech, lives in Hajipur, Bihar.We, the khabai tech team are on a mission to transform Bihar as an IT Hub" /><!--for fb description-->
+    <meta property="og:image" content="https://khabaitech.github.io/bikki_singh/bikki1.jpg" />
+    <meta property="og:url" content="http://khabaitech.com/team/Bikki/" />
+    <meta property="og:site_name" content="Bikki Singh | Full Stack Developer - Khabai Tech" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Bikki Singh | Full Stack Developer | Public Speaker"><!--for twitter title-->
+	<meta name="twitter:description" content="A full stack developer, public speaker at khabai tech, lives in Hajipur, Bihar.We, the khabai tech team are on a mission to transform Bihar as an IT Hub"><!--for twitter description-->
+	<meta name="twitter:image" content="https://khabaitech.github.io/bikki_singh/bikki1.jpg"><!--for twitter image-->
+	<meta name="twitter:creator" content="@programmerbikki">
+    <meta name="robots" content="index, follow">
+    <!--====Meta tags====-->
+
+    <!--====analytics====-->
+    <meta name="google-site-verification" content="7SmMM_KjHyURWOyi7DF9C4n-FWvWy1z6sACph36hw7o" />
+    <meta name="google-signin-client_id" content="306353773175-0rml01ajhoau4sh3h2c33dho8mti6od5.apps.googleusercontent.com.apps.googleusercontent.com">
+    
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144742454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144742454-1');
+</script>
+<!--====analytics====-->
+  
+    <!--====styling====-->
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://khabaitech.github.io/bikki_singh/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Google fonts - Josefin + Sans-->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="https://1.bp.blogspot.com/-KaHEYIJk3FM/XV7WcL4oM8I/AAAAAAAAG8Y/iH1RDZct-QA2HyS0PNv8gDAOEBEiU6O2gCK4BGAYYCw/s1600/vicky%2Blogo.png">
+
+    <link rel="stylesheet" type="text/css" href="https://khabaitech.github.io/bikki_singh/css/style.css">
+    <style>
+      .tog{
+        color: white;
+      }
+       .ulnone{
+         list-style-type: none;
+       }
+       .skills1{
+        width: 30%;
+       }
+       .skills2{
+        width: 98%;
+       }
+       .skills3{
+        width: 70%;
+       }
+       .skills4{
+        width: 50%;
+       }
+       .skills5{
+        width: 60%;
+       }
+       #contact-form input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: #f9f9f9;
+}
+
+#contact-form input:hover,
+#contact-form input:focus {
+  outline: none;
+}
+
+#contact-form textarea {
+  width: 100%;
+  min-height: 140px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: #f9f9f9;
+}
+
+#contact-form textarea:hover,
+#contact-form textarea:focus {
+  outline: none;
+}
+
+#contact-form #send-form.done {
+  background: #0fa049;
+  border-color: #0fa049;
+  color: #fff;
+}
+
+#contact-form #send-form.error {
+  background: #e20808;
+  border-color: #e20808;
+  color: #fff;
+}
+.btn-pro-line {
+  border-color: #000;
+  color: #000;
+  padding: 15px 30px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  box-shadow: 0px 7px 17px 3px rgba(27, 27, 27, 0);
+}
+
+.btn-pro-line:focus,
+.btn-pro-line:hover {
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0px 7px 17px 3px rgba(27, 27, 27, 0.41);
+}
+
+
+    </style>
+    <!--====styling====-->
+
+  </head>
+  <body>  
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container"><a href="index.html" class="j v scrollTo">Full Stack Developer</a>
+          <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right tog"><span class="fa fa-bars"></span></button>
+          <div id="navbarcollapse" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="#intro" class="nav-link link-scroll g">Home</a></li>
+              <li class="nav-item"><a href="#about" class="nav-link link-scroll g">About</a></li>
+              <li class="nav-item"><a href="#skill" class="nav-link link-scroll g">Skills</a></li>
+              
+             <li class="nav-item"><a href="#services" class="nav-link link-scroll g">Services</a></li>
+              <li class="nav-item"><a href="projects.html" class="nav-link link-scroll g">Projects</a></li>
+              <li class="nav-item"><a href="#contact" class="nav-link link-scroll g">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Intro Image-->
+    <section id="intro" class="intro-section pb-2 y">
+      <div id="particles"></div>
+      <div class="container text-center">
+   <h1 class="logo jae">Full Stack Developer | Public Speaker - Khabai Tech</h1>
+      </div>
+    </section>
+    <!-- About-->
+    <section id="about" class="about-section">
+      <div class="container">
+        <header class="text-center">
+          <h2 class="title ">About me</h2>
+        </header>
+        <div class="row">
+          <div class="col-lg-5"><br><br><br><br>
+            <div class="box16">
+              <img src="https://khabaitech.github.io/bikki_singh/bikki.jpg" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki" class="img-fluid">
+              <div class="box-content">
+                <h3 class="title">Bikki Singh</h3>
+                <h3 class="post v">Full Stack Developer - Khabai Tech</h3>
+                <ul class="social">
+                  <li><a href="https://www.facebook.com/programmerbikki" target="_blank" class="external facebook wow fadeInUp"><i class="fa fa-facebook">
+                  </i></a></li>
+                  <li> <a href="https://twitter.com/programmerbikki" target="_blank" data-wow-delay="0.2s" class="external instagram wow fadeInUp"><i class="fa fa-twitter"></i></a></li>
+                  <li> <a href="https://www.linkedin.com/in/programmerbikki/" target="_blank" data-wow-delay="0.4s" class="external gplus wow fadeInUp">
+                  <i class="fa fa-linkedin"></i></a></li>
+                  <li> <a href="https://github.com/bikkisingh886" target="_blank" data-wow-delay="0.4s" class="external whatsapp wow fadeInUp"><i class="fa fa-github"></i></a></li>
+                  <li> <a href="https://www.instagram.com/programmer_bikki/?hl=en" target="_blank" data-wow-delay="0.6s" class="email wow fadeInUp"><i class="fa fa-instagram"></i></a></li>
+                  <li> <a href=" https://api.whatsapp.com/send?phone=918294938831" target="_blank" data-wow-delay="0.4s" class="external whatsapp wow fadeInUp"><i class="fa fa-whatsapp"></i></a></li>
+                </ul>
+              </div>
+           </div>
+          </div>
+          <div  class="col-lg-7">
+            <h4 class="mb-3 d i">Hello, I am <strong class="ab">Bikki Singh,</strong></h4>
+            <p class="j">A Full Stack Developer,Public Speaker and SEO Expert love to developing responsive and creative websites and passionate about challenges, living in Hajipur, Bihar, India. I am working at <strong class="ab">Khabai Tech</strong> as a Full Stack Developer, Public Speaker and SEO Expert. I have one year of experiences in creating responsive and creative websites from <strong class="ab">Khabai Tech</strong>.</p>
+            <p class="j">We, the <span class="ab">Khabai Tech Team</span> are on a mission to transform <span class="ab">Bihar</span> as an <span class="ab">IT Hub</span> by transforming their lives, by transforming thinking methodology of IT students of <span class="ab">Bihar</span> through innovative learning and realtime technologies accessible to youngsters, and we have faith that one day <span class="ab">Bihar</span> will known for <span class="ab">IT Hub</span>.</p>
+            <p class="j">I believe in quality not quantity. I take every work as a challenge. Because challenge is the way of success. I believe in <span class="ab">TRANSFORMING LIVES DIGITALLY.</span></p> 
+            <p class="j">My vision is to work hard to satisfy the client. I have over 1 years of experience in web development and website design. I am hard worker and straight forward. I work hard until client become 100% satisfy.</p>        
+            <p class="j">I always try to solve any problem that comes across. Most important things about me, I am an honest, with higher thinking and positive attitude, believe in myself and I have patience.</p>
+            <div class="gradient-buttons">
+              <a href="https://api.whatsapp.com/send?phone=918294938831" target="_blank" class=" btn btn-success btn-md j" role="button">Hire Me</a>
+              <a href="Resume.pdf" target="_blank" class=" btn btn-success btn-md j" role="button"> My CV</a>
+           </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- About-->
+
+    <!-- skills-->
+    <section id="skill" class="l">
+      <div class="container">
+        <header class="text-center">
+          <h2 class="d i title"><span class="ab">My Skills</span></h2>
+        </header>
+       <div class="row">
+        <div class="col-md-6">
+            <div class="skill">
+              <h2 class="v f">HTML5/CSS3/Bootstrap4</h2>
+              <div class="progress">
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills2" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                  <span>98%</span>
+                </div>
+              </div>
+            </div><br>
+          <div class="skill">
+              <h2 class="v f">Wordpress</h2>
+              <div class="progress">
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar- skills3" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                  <span>70%</span>
+                </div>
+              </div>
+            </div><br>
+             <div class="skill">
+              <h2 class="v f">C/C++</h2>
+              <div class="progress" >
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills4" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  <span>50%</span>
+                </div>
+              </div>
+            </div><br>
+             <div class="skill">
+              <h2 class="v f">Google Cloud</h2>
+              <div class="progress">
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills1" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                  <span>30%</span>
+                </div>
+              </div>
+            </div><br>
+            <div class="skill">
+              <h2 class="v f">PHP</h2>
+              <div class="progress" >
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills5" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  <span>60%</span>
+                </div>
+              </div>
+            </div>
+        </div><br>
+        <div class="col-md-6">
+            <div class="skill">
+              <h2 class="v f">Public Speaking</h2>
+              <div class="progress">
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills4" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  <span>50%</span>
+                </div>
+              </div>
+            </div><br>
+          <div class="skill">
+              <h2 class="v f">Leadership</h2>
+              <div class="progress">
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills4" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  <span>50%</span>
+                </div>
+              </div>
+            </div><br>
+             <div class="skill">
+              <h2 class="v f">Team Management</h2>
+              <div class="progress" >
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills4" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  <span>50%</span>
+                </div>
+              </div>
+            </div><br>
+             <div class="skill">
+              <h2 class="v f">SEO</h2>
+              <div class="progress">
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills3" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                  <span>70%</span>
+                </div>
+              </div>
+            </div><br>
+            <div class="skill">
+              <h2 class="v f">Communication</h2>
+              <div class="progress" >
+                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated skills5" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  <span>60%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </section>
+    <!-- skills-->
+
+    <!-- services-->
+      <section class="service-grid pb-5 pt-5" id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 text-center mb-4">
+                        <div class="service-title">
+                            <h2 class="d i title"><b>My <span class="ab">Services</span></b></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-lg-4 col-md-6 text-center mb-3">
+                        <div class="service-wrap">
+                            <div class="service-icon">
+                                <i class="fa fa-laptop"></i>
+                            </div>
+                            <h4 class="g">Websites</h4>
+                            <p class="g">Website without visitors is like a ship lost in the horizon and We develop websites to match your business needs and standards which amaze you and your customers.Websites attracts the right kinds of visitors and Guides them to the main services or product you offer.
+We create thoughtful and purposeful websites that lead to the success of the clients and will certainly attract masses to visit you.</p>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center mb-3">
+                        <div class="service-wrap">
+                            <div class="service-icon">
+                                <i class="fa fa-desktop"></i> 
+                            </div>
+                            <h4 class="g">Software</h4>
+                            <p class="g">We develop and sell software to quench your needs and businesses . Software quality begins with the quality of the requirements and We dedicated to ensuring the high quality and reliability of Software. We are with our definitive objective and the objective is to ensure that your product is user friendly and meets the necessities of your intended interest group.</p>                        
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center mb-3">
+                        <div class="service-wrap">
+                            <div class="service-icon">
+                                <i class="fa fa-photo"></i>
+                            </div>
+                            <h4 class="g">Digital Cards & Gallery</h4>
+                            <p class="g">Cherish your Memories Once your auspicious event is over, cherish and share the awesome memories with your friends and family with a digital gallery. An intiative to help the guests reach the venue of celebration safe and secure on time. We design beautiful digital invitation for your auspicious events to make it memorable for you and your guests. Location Route Map We guide your guests to reach the veneue on time wherever it is..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- services-->
+
+        <!-- Resume-->
+           <section id="resume" class="l services-section">
+      <div class="container">
+        <header class="text-center">
+          <h2 class="d i title"><b> <span class="ab">My Resume</span></b></h2>
+        </header>
+        <div class="row faq-info">
+      <div class=" col-md-6 faq-w3agile">
+        <h2 class="mb-5 e">Education</h2>
+        <ul class="faq pl-sm-4 pl-3 ulnone">
+          <li class="resume-item mb-4">
+              <span class="date education"><span class="icon-calendar"></span> June 2017 - Present</span>
+              <p class="experience">Bachelor in Computer Application</p>
+              <p class="education">MMHAP University<br>
+              <span class="school education">Patna</span></p>
+            </li>
+          <li class="resume-item mb-4">
+              <span class="date education"><span class="icon-calendar"></span> May 2015 - February 2017</span>
+              <p class="experience">Intermediate (BSEB) </p>
+              <p class="education">SM Intermediate College<br>
+              <span class="school education">Jadhua, Hajipur</span></p>
+            </li>
+        <li class="resume-item mb-4">
+              <span class="date education" ><span class="icon-calendar"></span> March 2005 - March 2015</span>
+              <p class="experience">Matriculation (CBSE) </p>
+              <p class="education">St.Joseph Public School<br>
+              <span class="school education" >Dalsinghsarai, Samastipur</span></p>
+            </li>  
+        </ul>
+      </div>
+      <div class=" col-md-6 faq-w3agile">
+        <h2 class="mb-5 e">Experience</h2>
+        <ul class="faq pl-sm-4 pl-3 ulnone">
+          <li class="resume-item mb-4">
+                  <span class="date education" ><span class="icon-calendar"></span>February 2020</span>
+                  <p class="experience">Public Speaker</p>
+                  <p class="education">Khabai Tech<br>
+                  <span class="school education">Hajipur</span></p>
+          </li>
+          <li class="resume-item mb-4">
+                  <span class="date education" ><span class="icon-calendar"></span>October 2019 - Present</span>
+                  <p class="experience">SEO Expert</p>
+                  <p class="education">Khabai Tech<br>
+                  <span class="school education">Hajipur</span></p>
+          </li>
+          <li class="resume-item mb-4">
+                  <span class="date education" ><span class="icon-calendar"></span> September 2018 - Present</span>
+                  <p class="experience">Full Stack Developer</p>
+                  <p class="education">Khabai Tech<br>
+                  <span class="school education">Hajipur</span></p>
+          </li>
+          
+        </ul>
+      </div>
+      </div>
+    </div>
+    </section> 
+<!-- Resume-->
+
+    <!-- Testimonials-->
+    <section class="process py-5" id="testimonials">
+  <div class="container py-md-5">
+    <header class="text-center">
+          <h2 class="title">Testimonial</h2>
+    </header>
+    <div class="row">
+    <div class="col-md-8 col-center m-auto">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>   
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <div class="item carousel-item active">
+            <div class="img-box"><img src="https://1.bp.blogspot.com/-KnUs_saHifQ/XcfYFsupShI/AAAAAAAAINA/3g1LkngXVkYILG7AsBOlC_5wdPtSK2q5ACK4BGAYYCw/s400/p.jpg" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki"></div>
+            <p class="testimonial j">I have always appreciated smart workers but my thoughts transformed after meeting this guy. He is a devoted and smart coder. He has got patience like the mountains.</p>
+            <h2 class="overview"><b class="d j">Prince Chauhan</b></h2>
+            <h3><span class="d j">CEO, <strong class="ab">Khabai Tech</strong></span></h3>
+          </div>
+          <div class="item carousel-item">
+            <div class="img-box"><img src="https://4.bp.blogspot.com/-HH-iwihGCUQ/XcjveDCl5II/AAAAAAAAIOU/0c-0UR-olW4-Mvn9iVBypq0UJ9Xx4DVqgCK4BGAYYCw/s320/Vishwak.jpg" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki"></div>
+            <p class="testimonial j">Have heard a lot about him from other team-mates. He is liked by everyone and that makes him very special</p><p><b class="j">Wish him a wonderful future.</b></p>
+            <h2 class="overview"><b class="d j">Vishwak Sen</b></h2>
+            <h3><span class="d j">Founder, <strong class="ab">Khabai Tech</strong></span></h3>
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+ <!-- Testimonials-->
+
+ <!-- Journey-->
+<section class="bg-light">
+        <div class="col-sm-12">
+          <header class="mb-5 text-center">
+            <h3 class="k">Moments of <span class="ab">My Journey</span></h3>
+          </header>
+           <div id="gallery" class="container-fluid">  
+  <img src="https://3.bp.blogspot.com/-QV2smmatw3Q/XZrdjb5Vk3I/AAAAAAAAHok/sFpSmieAo-QHoQXoi0mxhNuynF45ZG8sQCK4BGAYYCw/s400/group11.png" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+  <img src="https://2.bp.blogspot.com/-nDSyi5OUTGs/XmsPvYSrwRI/AAAAAAAALLk/zLfiPwYpbCUHSLXR2I_BOAveqtJdOEUaACK4BGAYYCw/s1600/performer%2Bof%2Bkhabai%2Btech.jpg" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+   
+   <img src="https://3.bp.blogspot.com/-831QEYVW6HI/XmsMtGpdpkI/AAAAAAAALKw/Y_zh0O7Q-lIg2fGhz8hFumMKxUQls6-IgCK4BGAYYCw/s1600/speaker%2Bgdg.png" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+  <img src="https://1.bp.blogspot.com/-NUOfZEI01Js/XTWc96IlQYI/AAAAAAAAFZ4/wMossesl-ek4ZUM4R32r02BWSjMJO1fvgCLcBGAs/s320/microsoft%2Bicard.png" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+  <img src="https://1.bp.blogspot.com/-165QkJniK7Q/XTNQtGNznuI/AAAAAAAAFYw/29HYo0o-7wM7b7xitXz6uxl9cMuh5uvFwCLcBGAs/s320/micro.jpg" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki"> 
+  <img src="https://3.bp.blogspot.com/-xFPgZ0yZZ1Y/XmsNBaqo0hI/AAAAAAAALLA/M3S78vcrihc1T7CE9e0Xmbi1JoLf8Mx3wCK4BGAYYCw/s1600/speaker%2Bgdg%2Bkhabaitech.JPG" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+  <img src="https://2.bp.blogspot.com/-Z__KoqCbGK0/XmsMLGOUxfI/AAAAAAAALKc/IjZHGTPN3I4E8ezb2kWZ1A4cF1iNC42qgCK4BGAYYCw/s1600/IMG20200118113240.jpg" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+  
+  <img src="https://1.bp.blogspot.com/-wI7DDjlJOuM/XmsNUg4RtEI/AAAAAAAALLQ/PDXKrV225lQDq7fyiazo3Rr0VEIntV7LwCK4BGAYYCw/s1600/group7.png" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+   <img src="https://4.bp.blogspot.com/-1clTWCc3ilc/XmsNUzwDDTI/AAAAAAAALLU/kOTnu7P7nO4dzZP71gWrGQ1P3T7e7htNwCK4BGAYYCw/s1600/IMG_20190804_185841.jpg" class="card img-responsive" alt="khabai tech developer bikki singh fullstack developer khabai tech public speaker bikki singh bihar bikki singh hajipur programmerbikki">
+  
+  
+  
+  
+</div><br>
+<div class="gradient-buttons text-center">  
+       <a href="gallery.html" class=" btn btn-success btn-md j center-block">View My Gallery</a>
+      </div>
+        </div>
+    </section><br><br>
+<!-- Journey-->
+
+<!-- contact-->
+    <section id="contact" class="contact-section contact ">
+      <div class="container" >
+        <header class="text-center">
+          <h2 class="title">Get in touch</h2>
+        </header>
+        <div class="row">
+          <div class="col-md-12 mb-5">
+      </div>
+      <div class="col-md-7 mb-5 mb-md-0">
+       <form action="" id="contact-form" method="POST" >
+            <div class="row">
+              <div class="col-sm-6">
+                <input type="text" name="name" id="name" required placeholder="Your Name*">
+              </div>
+              <div class="col-sm-6">
+                <input type="email" name="email" id="email" required placeholder="Your Email*">
+              </div>
+              <div class="col-sm-12">
+                <textarea id="massage" name="message" required placeholder="Your Message*"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="site-btn btn-pro-line" data-wow-delay="0.2s" id="send-form">Send A Message</button>
+              </div>
+              <?php 
+			if(isset($msg) & !empty($msg)){
+				echo $msg;
+			}
+		?>
+            </div>
+          </form>
+      </div>
+      <div class="col-md-5 pl-md-5">
+            <ul class="site-contact-details">
+              <li>
+               <p> <span class="text-uppercase f">Email</span><br>
+               <a href="mailto: bikkisingh886@gmail.com">bikkisingh886@gmail.com</a></p>
+              </li>
+              <li>
+                <p><span class="text-uppercase f">Phone</span><br>
+                <a href="tel:+918294938831"> 8294938831</a></p>
+              </li>
+              <li>
+                <span class="text-uppercase f" >Location</span><br>
+                <p class="f">Daudnagar<br>
+                Vaishali, Bihar, India</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> 
+<!-- contact-->
+
+       <!-- footer-->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 text-center text-lg-left">
+            <p class="social">
+              <a href="https://www.facebook.com/programmerbikki" target="_blank" class="external facebook wow fadeInUp"><i class="fa fa-facebook">
+              </i></a>
+              <a href="https://twitter.com/programmerbikki" target="_blank" data-wow-delay="0.2s" class="external instagram wow fadeInUp">
+              <i class="fa fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/in/programmerbikki/" target="_blank" data-wow-delay="0.4s" class="external gplus wow fadeInUp">
+              <i class="fa fa-linkedin"></i></a>
+               <a href="https://github.com/bikkisingh886" target="_blank" data-wow-delay="0.4s" class="external gplus wow fadeInUp">
+              <i class="fa fa-github"></i></a>
+              <a href="https://www.instagram.com/programmer_bikki/?hl=en" target="_blank" data-wow-delay="0.6s" class="email wow fadeInUp"><i class="fa fa-instagram"></i></a>
+              <a href=" https://api.whatsapp.com/send?phone=918294938831" target="_blank" data-wow-delay="0.4s" class="external whatsapp wow fadeInUp"><i class="fa fa-whatsapp"></i></a>
+            </p>
+          </div>
+          <div class="col-md-7 text-center text-lg-right mt-4 mt-lg-0">
+            <p class="f"> Copyright © <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script>. All rights reserved | Design by 
+    <a href="index.html"> Bikki </a> Mentored by <a href="http://khabaitech.com/" target="_blank">Khabai Tech</a>
+  </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer-->
+
+    <!-- JavaScript files-->
+    <script src="https://khabaitech.github.io/bikki_singh/vendor/jquery/jquery.min.js"></script>
+    <script src="https://khabaitech.github.io/bikki_singh/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://khabaitech.github.io/bikki_singh/js/particles.min.js"></script>
+  <script src="https://khabaitech.github.io/bikki_singh/js/init-particles.js"></script>
+ <!-- JavaScript files-->
+
+
+
+ 
+
+  </body>
+</html>
